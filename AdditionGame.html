@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Eleventh JavaScript</title>
+</head>
+<body>
+
+<h1>My tenth JavaScript</h1>
+
+
+
+<script>
+
+
+
+function getNumber(numberString) {
+    while (true) {
+        const number = parseFloat(prompt("Enter Number " + numberString + ": ")) 
+        if (isNaN(number)) {
+            confirm("Invalid input")
+        } else {
+            return number
+        }
+    }    
+}
+
+const number1 = getNumber('One');
+const number2 = getNumber('Two');
+
+const operator = prompt("Enter Sign: ")
+
+let result;
+let valid = true;
+switch(operator) {
+    case "+":
+        result = number1 + number2
+        break;
+    case "-":
+        result = number1 - number2
+        break;
+    case "/":
+        if (number2 === 0) {
+            valid = false
+            confirm("Zero division error.")
+        } 
+        result = number1 / number2
+        break;
+    case "*":
+        result = number1 * number2
+        break;
+    default:
+        confirm("Invalid")
+        valid = false;
+        break;
+}
+
+if (valid) 
+    document.write( number1 , operator , number2 , " = ", result)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Eleventh JavaScript</title>
+</head>
+<body>
+
+<h1>My tenth JavaScript</h1>
+
+
+
+<script>
+
+
+function printInfo() {
+    document.write("Contact Management System")
+    document.write("-------------------------")
+    document.write("1. Add a Contact")
+    document.write("2. Delete a Contact")
+    document.write("3. View Contacts")
+    document.write("4. Search Contacts")
+    document.write('5. Exit')
+}
+
+function addContact() {
+    const name = prompt("Name: ")
+    const email = prompt("Email: ")
+    const contact = {
+        name: name,
+        email: email
+    }
+    contacts.push(contact)
+    document.write("Added!")
+}
+
+function deleteContact() {
+    document.write("Contact IDs")
+    for (let i = 0; i < contacts.length; i++) {
+        const contact = contacts[i]
+        document.write((i + 1).toString() + ":", contact.name)
+    }
+    const number = parseInt(prompt("Enter an ID: "))
+    if (isNaN(number) || number > contacts.length) {
+        document.write("Invalid.")
+        return
+    }
+    contacts.splice(number - 1, 1)
+    document.write("Removed.")
+}
+
+function searchContact() {
+    const searchString = prompt("Search: ").toLowerCase()
+    const results = [];
+
+    for (let contact of contacts) {
+        if (contact.name.toLowerCase().includes(searchString)) results.push(contact)
+    }
+
+    listContacts(results)
+}
+
+function listContacts(contacts) {
+    for (let contact of contacts) {
+        document.write("###########")
+        document.write('Name:', contact.name)
+        document.write("Email: ", contact.email)
+    }
+}
+
+const contacts = []
+let keepGoing = true;
+
+printInfo()
+
+while (keepGoing) {
+    const number = prompt("Enter an opeation (1-5): ")
+    document.write()
+    switch (number) {
+        case "1":
+            addContact()
+            break;
+        case "2":
+            deleteContact()
+            break;
+        case "3":
+            listContacts(contacts)
+            break;
+        case "4":
+            searchContact()
+            break;
+        case "5":
+            keepGoing = false;
+            break;
+        default:
+            document.write("Unknown.")
+            break;
+    }
+}
+</script>
+
+</body>
+</html>

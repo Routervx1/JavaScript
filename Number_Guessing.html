@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>My Second JavaScript</title>
+
+<script>
+
+
+const target = Math.round(Math.random() * 100);
+
+let guesses = 0;
+
+while (true) {
+  guesses++;
+
+  const guess = Number(prompt("Guess the number (0-100): "));
+  if (guess > target) {
+    confirm("Your guess is too high.");
+    continue;
+  } else if (guess < target) {
+    confirm("Your guess is too low.");
+    continue;
+  }
+
+  confirm("You guessed it!");
+  break;
+}
+
+document.write("You guessed the number in ", guesses, " tries!");
+    </script>
+</head>
+
+
+  <body>
+    
+
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My First JavaScript</title>
+</head>
+<body>
+
+<h1>My tenth JavaScript</h1>
+
+
+
+<script>
+
+const name = prompt("What is your name? ")
+alert("Hello", name, "welcome to our game!")
+
+const shouldWePlay = prompt('Do you want to play? ')
+
+if (shouldWePlay.toLowerCase() === "yes") {
+    // Game logic
+    const leftOrRight = prompt("You enter a maze, do you want to go left or right? ")
+    if (leftOrRight === "left") {
+        confirm("You go left and see a bridge...")
+        const cross = prompt("Do you want to cross the bridge? ").toLowerCase()
+        if (cross === "yes" || cross === "y" || cross === "okay") {
+            confirm("You cross but the bridge was weak and broke and you fell. You lost...")
+        } else {
+            confirm("Good choice... You win")
+        }
+    } else {
+        confirm("You go right and fall off a cliff...")
+    }
+} else if (shouldWePlay.toLowerCase() === "no") {
+    alert("Okay :(")
+} else {
+    alert("Invalid input...")
+} 
+</script>
+
+</body>
+</html>
